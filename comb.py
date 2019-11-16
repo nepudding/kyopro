@@ -13,9 +13,11 @@ for i in range(-2, -list_size-1, -1):
 	f_r_list[i] = ((f_r_list[i+1] * (list_size + 2 + i)) % MOD)
 
 def comb(n,r):
-    if r == 0:
+    if n < r:
+        return 0
+    if n == 0 or r == 0 or n == r:
         return 1
     return (((f_list[n - 1] * f_r_list[n - r - 1]) % MOD) * f_r_list[r - 1]) % MOD
 
 N = int(input())
-print(comb(N,N//2))
+print(comb(N,N))
