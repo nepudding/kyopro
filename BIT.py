@@ -28,6 +28,7 @@ def main(N,Q,c,q):
             rbi[c[i]] = i+1
             bit.add(rbi[c[i]],1)
         ans[ind] = bit.sum(r)-bit.sum(l-1)
+        R = r
     return ans
                 
 
