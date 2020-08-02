@@ -15,6 +15,9 @@ class BIT: # 1Indexed
 
 ################### ABC174F ###################
 
+import sys
+input = sys.stdin.readline
+
 def main(N,Q,c,q):
     bit = BIT(N)
     rbi= {}
@@ -30,8 +33,6 @@ def main(N,Q,c,q):
         ans[ind] = bit.sum(r)-bit.sum(l-1)
         R = r
     return ans
-                
-
 
 if __name__ == "__main__":
     N,Q = map(int,input().split())
