@@ -1,7 +1,7 @@
 MOD = 998244353         # 問題に合わせて適宜書き換え
 list_size = 10000010    # 問題に合わせて適宜書き換え
 
-ff_list = [1] * list_size
+f_list = [1] * list_size
 f_r_list = [1] * list_size
 
 for i in range(1,list_size):
