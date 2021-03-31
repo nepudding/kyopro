@@ -1,15 +1,16 @@
 class BIT: # 1Indexed
-    def __init__(self,size):
+    def __init__(self,size,calc=lambda x,y:x+y):
         self.array = [0]*size
         self.size  = size
-    def add(self,ind,value):
+        self._calc = calc
+    def set_val(self,ind,value):
         while ind <= self.size:
-            self.array[ind-1] += value
+            self.array[ind-1] = value
             ind += ind & -ind
-    def sum(self,x):
+    def section(self,x):
         out = 0
         while x > 0:
-            out += self.array[x-1]
+            out = self._calc(out,self.array[x-1])
             x -= x & -x
         return out
 
